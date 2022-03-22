@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/components/template/template.xhtml">
+	<ui:param name="pageTitle" value="Profesores" />
+	<ui:define name="Profesores">
+		<h:form>
+			<p>Esta es la pagina de Profesores</p>
+
+
+
+			
+			<br />
+
+			<br />
+			<h:commandButton value="Ver  Tabla"
+				actionListener="#{profesorBean.consultarProfesores()}" />
+			<br />
+			
+			
+			
+			<div class="card">
+
+				<p:dataTable value="#{profesorBean.listRecover}" var="profesors">
+					rendered="#{profesorBean.listRecover.size()>0}">
+					
+					<p:column headerText="ID">
+						<h:outputText value="#{profesors.id}" />
+					</p:column>
+					
+					<p:column headerText="NOMBRE">
+						<h:outputText value="#{profesors.nombre}" />
+					</p:column>
+					
+					<p:column headerText="PASSWORD">
+						<h:outputText value="#{profesors.password}" />
+					</p:column>
+					
+					<p:column headerText="NIVEL">
+						<h:outputText value="#{profesors.nivel}" />
+					</p:column>
+					
+					<p:column headerText="GRUPO">
+						<h:outputText value="#{profesors.grupo}" />
+					</p:column>
+					
+					
+					<p:column headerText="Actualizar" rendered="false">
+						<h:commandButton value="Enviar" actionListener="#{estudianteBean.eliminarEstudiante(students)}" />
+					</p:column>
+					
+					<p:column headerText="Buscar" rendered="false">
+						<h:commandButton value="Enviar" actionListener="#{estudianteBean.eliminarEstudiante(students)}" />
+					</p:column>
+	
+			
+					<p:column headerText="Elimanar" rendered="false">
+						<h:commandButton value="Realiazar" actionListener="#{estudianteBean.eliminarEstudiante(students)}" />
+					</p:column>
+	
+	
+	
+				</p:dataTable>
+
+			</div>
+			
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

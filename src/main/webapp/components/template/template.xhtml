@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:view contentType="text/html">
+	<h:head>
+		<meta charset="UTF-8" />
+		<title>Softtek - #{pageTitle}</title>
+		<link rel="stylesheet" href="resources/css/default.css" />
+	</h:head>
+	<h:body>
+		<ui:include src="/components/banner.xhtml" />
+
+		<ui:insert name="Principal">
+		</ui:insert>
+		<ui:insert name="Estudiantes">
+		</ui:insert>
+		<ui:insert name="Profesores">
+		</ui:insert>
+		<ui:insert name="Grupo">
+		</ui:insert>
+		
+		<ui:include src="/components/footer.xhtml" />
+	</h:body>
+</f:view>
+</html>
